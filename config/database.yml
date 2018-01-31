@@ -11,7 +11,7 @@ default: &default
 
 development:
 
-  adapter: mysql2
+  adapter: ph
   database: railsblog
   username: root
   password: root
@@ -27,6 +27,7 @@ test:
 
 production:
   <<: *default
+    adapter: ph
   database: d27ems4rqvfv7o
   username: xypbgxeibaoonu
   port: 5432
