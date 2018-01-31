@@ -6,11 +6,24 @@ class ArticlesController < ApplicationController
 		
 	def new
 
+  		@article = Article.new
+	end
+	def create
+	@articles = Article.new(articles_param)		
+
+	@articles.save
+	redirect_to @articles
 	end
 
-	def create
-	@articles = new Article.new(articles_param)		
-	@articles.save
-	redirect_to @article
+
+	private 
+	def show
+		
 	end
+	def articles_param
+		params.require(:article).permit(:title,:text)
+		
+	end
+
+ 
 end
