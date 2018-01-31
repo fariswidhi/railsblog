@@ -9,17 +9,7 @@
 
 <hr>
 <h3>Comments</h3>
-<% @article.comments.each do | c| %>
-	<p>
-		<strong>Commenter</strong>
-		<%= c.commenter %>
-	</p>
-	<p>
-		<strong>Body</strong>
-		<%= c.body %>
-	</p>
-	<hr>
-<% end %>
+<%= render @article.comments %>
 
 
 <div class="row">
