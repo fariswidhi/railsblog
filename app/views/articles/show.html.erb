@@ -6,3 +6,41 @@
 	<strong>Text</strong>
 	<%= @article.text %>
 </p>
+
+<hr>
+<h3>Comments</h3>
+<% @article.comments.each do | c| %>
+	<p>
+		<strong>Commenter</strong>
+		<%= c.commenter %>
+	</p>
+	<p>
+		<strong>Body</strong>
+		<%= c.body %>
+	</p>
+	<hr>
+<% end %>
+
+
+<div class="row">
+	<div class="col-lg-4">
+		
+
+<h2>Add a Comment</h2>
+<%= form_with(model: [@article,@article.comments.build], local:true) do |form| %>
+
+<p>
+  <%= form.label :commenter %> <br>
+  <%= form.text_field :commenter,class: "form-control"  %> <br>
+</p>
+
+<p>
+  <%= form.label :body %> <br>
+  <%= form.text_area :body,class: "form-control" %> <br>
+  
+</p>
+<%= form.submit 'Save',:class=>'form-control btn btn-success' %>
+<% end %>
+
+	</div>
+</div>
