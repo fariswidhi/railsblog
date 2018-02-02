@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
-	skip_before_action :require_valid_user!,except: [:destroy]
+
+  skip_before_action :require_valid_user!, except: [:destroy]
+
   def new
-  	if !current_user.nil?
 
+  	if !session[:user_id].blank?
   		redirect_to root_path
-
+  		
   	end
-
   end
 
   def create
-  	
+
   	# reset session
   	# reset_session
   	# cari user by email

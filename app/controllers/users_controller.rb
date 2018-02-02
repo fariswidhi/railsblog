@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
-	skip_before_action :require_valid_user!
-	# before_action :reset_session
+  skip_before_action :require_valid_user!
+
+
   def new
-
-  	if !current_user.nil?
-
+  	
+  	if !session[:user_id].blank?
   		redirect_to root_path
-  	else
-  		  	@user = User.new
+  		
   	end
+  	
+  		  	@user = User.new
 
   end
 
