@@ -1,25 +1,16 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Railsblog</title>
+    <title>AuthenticationExample</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css' %>
   </head>
 
   <body>
-
-<nav class="navbar navbar-light bg-danger nav-head">
-  <a class="navbar-brand" href="<%= root_path %>">Railsblog</a>
-</nav>
-  <div class="container">
-	<div class="card">
-		<div class="card-body">
-			
+    <div class='container'>
     <%= yield %>
-		</div>
-	</div>
     </div>
   </body>
 </html>

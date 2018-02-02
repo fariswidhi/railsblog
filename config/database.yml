@@ -11,7 +11,7 @@ default: &default
 
 development:
 
-  adapter: ph
+  adapter: mysql2
   database: railsblog
   username: root
   password: root
@@ -25,10 +25,10 @@ test:
   database: db/test.sqlite3
 
 
-production:
-  <<: *default
-    adapter: ph
-  database: d27ems4rqvfv7o
-  username: xypbgxeibaoonu
-  port: 5432
-  password: d181461d9ed51b5c8f4a5560d5b746e09848aa245275b113f2eae8d6200f02c2
+# production:
+#   <<: *default
+#     adapter: mysql2
+#   database: d27ems4rqvfv7o
+#   username: xypbgxeibaoonu
+#   port: 5432
+#   password: d181461d9ed51b5c8f4a5560d5b746e09848aa245275b113f2eae8d6200f02c2
