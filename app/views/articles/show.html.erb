@@ -1,15 +1,9 @@
-<p>
-	<strong>Title</strong>
-	<%= @article.title %>
-</p>
-<p>
-	<strong>Text</strong>
-	<%= @article.text %>
-</p>
-<p>
-	<strong>Image</strong>
+<h4>	<%= @article.title %></h4>
 	<%= image_tag(@article.image.url,alt:'Image') if @article.image? %>
+<p>
+	<%= @article.text.html_safe %>
 </p>
+
 <hr>
 <h3>Comments</h3>
 <%= render @article.comments %>

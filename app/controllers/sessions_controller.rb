@@ -20,9 +20,9 @@ class SessionsController < ApplicationController
   	if @user && @user.authenticate(session_params[:password])
   		session[:user_id] =@user.id
   		flash[:success] = "Welcome Back!"
-  		redirect_to root_path
+  		redirect_to articles_path
   	else
-  		flash[:error] = "Salag"
+  		flash[:error] = "Sorry, Does Not Password"
   		redirect_to login_path
   	end
   end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard/show'
 
   get 'welcome/index'
- 
+  get 'home/index'
   resources :articles  do
   	resources :comments
   end
@@ -22,5 +22,6 @@ Rails.application.routes.draw do
  	get 'logout', to: 'sessions#destroy'
  	resources :sessions, only: [:create]
  	resources :users, only: [:new,:create]
-  root 'articles#index'
+  root 'home#index'
+  get '/:id', to: 'home#detail', as: :detail
 end

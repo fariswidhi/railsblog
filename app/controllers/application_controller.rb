@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :require_valid_user!
+  before_action :require_valid_user!, except: [:home]
 
 
   def current_user

@@ -6,12 +6,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<!-- include summernote css/js -->
+
+
+<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
   </head>
 
   <body>
 
 <nav class="navbar navbar-light bg-danger nav-head">
   <a class="navbar-brand" href="<%= root_path %>">Railsblog</a>
+  <div class="pull-right">
+    
+  <% if session[:user_id].nil? %>
+  <%= link_to 'Login',login_path%>
+  <% else %>
+  <%= link_to 'Logout', logout_path %>
+  <% end %>
+  </div>
 </nav>
   <div class="container">
 	<div class="card">
@@ -22,4 +40,12 @@
 	</div>
     </div>
   </body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+  $('#summernote').summernote({
+         height: 300
+  });
+});
+  </script>
 </html>

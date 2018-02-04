@@ -12,7 +12,9 @@ gem 'rails', '~> 5.1.4'
 gem 'mysql2'
 # gem 'pg', '~> 0.20'
 
+gem 'jquery-rails'
 
+gem 'bootstrap-wysihtml5-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -31,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 1.0'
 gem 'bootstrap', '~> 4.0.0'
 gem 'bcrypt'
+gem "wysiwyg-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
