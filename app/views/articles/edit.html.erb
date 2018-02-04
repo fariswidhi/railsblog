@@ -1,12 +1,18 @@
 <div class="row"> 
   <div class="col-lg-6">  
   <h3>Edit Article</h3>
-<%= form_with(model:@article) do |form| %>
+<%= form_with(model:@article,:multipart=>true) do |form| %>
+
 <p>
   <%= form.label :title %> <br>
   <%= form.text_field :title,class: "form-control"  %> <br>
 </p>
 
+<p>
+	<%= form.label :Picture %>
+
+	<%= form.file_field :image %>
+</p>
 <p>
   <%= form.label :text %> <br>
   <%= form.text_area :text,class: "form-control" %> <br>

@@ -6,7 +6,10 @@
 	<strong>Text</strong>
 	<%= @article.text %>
 </p>
-
+<p>
+	<strong>Image</strong>
+	<%= image_tag(@article.image.url,alt:'Image') if @article.image? %>
+</p>
 <hr>
 <h3>Comments</h3>
 <%= render @article.comments %>
