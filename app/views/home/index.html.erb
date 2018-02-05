@@ -5,9 +5,19 @@
 		<div class="col-12">
 			
 	<h3><%= link_to a.title,a.title.parameterize + "-" + a.id.to_s %></h3>
+	<b><%= a.created_at %></b>
+	<br>
 		</div>
 		<div class="col-lg-3">
-			<%= image_tag( a.image.url,alt:'Image',class:'img img-thumbnail')  if a.image? %>
+			<% if a.image? %>
+			<%= image_tag( a.image.url,alt:'Image',class:'img img-thumbnail')  %>
+			<% else %>
+
+			<img src="/uploads/notfound.png" class="img img-thumbnail">	
+			<% end %>
+		</div>
+		<div class="col-lg-5">
+			<%= strip_tags(a.text.html_safe)[0,100]+'...' %>
 		</div>
 	</div>
 
